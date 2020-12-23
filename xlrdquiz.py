@@ -33,6 +33,7 @@ def parse_file(datafile):
 }
 
     ### other useful methods:
+	print(sheet[0])
 	coast = sheet.col_values(1, start_rowx=1, end_rowx=None)
 
 	data['maxvalue'] = max(coast)
