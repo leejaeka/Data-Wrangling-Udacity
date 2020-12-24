@@ -46,3 +46,12 @@ def parse_file(datafile):
     return data
 
 data = parse_file(datafile)
+
+# -*- coding: utf-8 -*-
+'''
+Find the time and value of max load for each of the regions
+COAST, EAST, FAR_WEST, NORTH, NORTH_C, SOUTHERN, SOUTH_C, WEST
+and write the result out in a csv file, using pipe character | as the delimiter.
+
+An example output can be seen in the "example.csv" file.
+'''
