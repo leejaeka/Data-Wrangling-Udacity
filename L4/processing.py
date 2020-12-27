@@ -73,8 +73,23 @@ def process_file(filename, fields):
             l = reader.next()
 
         for line in reader:
-            # YOUR CODE HERE
-            pass
+            temp = {}
+            c = {}
+            temp['uri'] = line['URI'] if line['URI'] != ('NULL' or '') else None
+            temp['label'] = line['rdf-schema#label'].split(' ')[0] if line['rdf-schema#label'] != ('NULL' or '') else None
+            temp['description'] = line['rdf-schema#comment'] if line['rdf-schema#comment'] != ('NULL' or '') else None
+            temp['name'] = line['name'] if line['name'] != ('NULL' or '') else temp['label']
+            temp['synonym'] = line['synonym'].replace('{','').replace('}','').split('|') if line['synonym'] != ('NULL' or '') else None
+            c['family'] = line['family_label'] if line['family_label'] != ('NULL' or '') else None
+            c['class'] = line['class_label'] if line['class_label'] != ('NULL' or '') else None
+            c['phylum'] = line['phylum_label'] if line['phylum_label'] != ('NULL' or '') else None
+            c['order'] = line['order_label'] if line['order_label'] != ('NULL' or '') else None
+            c['kingdom'] = line['kingdom_label'] if line['kingdom_label'] != ('NULL' or '') else None
+            c['genus'] = line['genus_label'] if line['genus_label'] != ('NULL' or '') else None
+            temp['classification'] = c 
+            data.append(temp)
+            
+            print(data)
     return data
 
 

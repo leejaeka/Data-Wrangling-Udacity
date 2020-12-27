@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\L4"
+    "\\L4",
+    "\\L5"
   ],
-  "SelectedNode": "\\L4\\mongo_ex.py",
+  "SelectedNode": "\\L5\\aggregate.py",
   "PreviewInSolutionExplorer": false
 }
